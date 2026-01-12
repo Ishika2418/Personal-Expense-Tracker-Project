@@ -54,7 +54,7 @@ function Dashboard() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    api.get("http://127.0.0.1:8000/api/dashboard/")
+    api.get("https://personal-expense-tracker-project-3.onrender.com/api/dashboard/")
       .then(res => setData(res.data.category_breakdown));
   }, []);
 
