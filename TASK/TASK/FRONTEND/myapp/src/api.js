@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "https://YOUR_BACKEND_URL/api/",
+  baseURL: "https://personal-expense-tracker-project-3.onrender.com/api/",
 });
