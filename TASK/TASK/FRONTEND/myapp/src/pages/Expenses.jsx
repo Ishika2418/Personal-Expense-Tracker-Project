@@ -144,7 +144,7 @@ export default function Expenses() {
   const [editingId, setEditingId] = useState(null);
 
   const loadExpenses = async () => {
-    const res = await api.get("http://127.0.0.1:8000/api/expenses/");
+    const res = await api.get("https://personal-expense-tracker-project-3.onrender.com/api/expenses/");
     setExpenses(res.data);
   };
 
@@ -153,25 +153,25 @@ export default function Expenses() {
   }, []);
 
   const createExpense = async () => {
-    await api.post("http://127.0.0.1:8000/api/expenses/", form);
+    await api.post("https://personal-expense-tracker-project-3.onrender.com/api/expenses/", form);
     resetForm();
     loadExpenses();
   };
 
   const viewExpense = async (id) => {
-    const res = await api.get(`http://127.0.0.1:8000/api/expenses/${id}/`);
+    const res = await api.get(`https://personal-expense-tracker-project-3.onrender.com/api/expenses/${id}/`);
     setForm(res.data);
     setEditingId(id);
   };
 
   const updateExpense = async () => {
-    await api.put(`http://127.0.0.1:8000/api/expenses/${editingId}/`, form);
+    await api.put(`https://personal-expense-tracker-project-3.onrender.com/api/expenses/${editingId}/`, form);
     resetForm();
     loadExpenses();
   };
 
   const patchExpense = async () => {
-    await api.patch(`http://127.0.0.1:8000/api/expenses/${editingId}/`, {
+    await api.patch(`https://personal-expense-tracker-project-3.onrender.com/api/expenses/${editingId}/`, {
       amount: form.amount,
     });
     resetForm();
@@ -179,7 +179,7 @@ export default function Expenses() {
   };
 
   const deleteExpense = async (id) => {
-    await api.delete(`http://127.0.0.1:8000/api/expenses/${id}/`);
+    await api.delete(`https://personal-expense-tracker-project-3.onrender.com/api/expenses/${id}/`);
     loadExpenses();
   };
 
