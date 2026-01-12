@@ -33,7 +33,7 @@ function Converter() {
 
   const convert = async () => {
     const res = await api.get(
-      `http://127.0.0.1:8000/api/convert/?amount=${amount}&to=USD`
+      `https://personal-expense-tracker-project-3.onrender.com/api/convert/?amount=${amount}&to=USD`
     );
     setResult(res.data.converted_amount);
   };
